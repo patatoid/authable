@@ -5,6 +5,7 @@ defmodule Authable.GrantType.Base do
 
   use Authable.RepoBase
   import Authable.Config, only: [repo: 0, grant_types: 0, scopes: 0]
+  alias Authable.GrantType.RefreshToken
 
   @doc """
   A common function to generate oauth2 tokens (access_token and refresh_token)
@@ -79,7 +80,7 @@ defmodule Authable.GrantType.Base do
     }
   end
 
-  defp put_refresh_token?(token_params, Authable.GrantType.RefreshToken),
+  defp put_refresh_token?(token_params, RefreshToken),
     do: put_refresh_token(token_params)
 
   defp put_refresh_token?(token_params, _), do: token_params
