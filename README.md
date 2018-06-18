@@ -15,7 +15,7 @@ The package can be installed as:
 
 ```elixir
     def deps do
-      [{:authable, "~> 0.9.1"}]
+      [{:authable, "~> 0.9.2"}]
     end
 ```
 
