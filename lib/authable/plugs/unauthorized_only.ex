@@ -35,7 +35,7 @@ defmodule Authable.Plug.UnauthorizedOnly do
 
     conn
     |> renderer.render(:bad_request, %{
-         errors: %{details: "Only unauhorized access allowed!"}
+         errors: %{details: "Only unauthorized access allowed!"}
        })
     |> halt
   end
