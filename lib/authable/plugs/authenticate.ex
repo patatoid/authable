@@ -13,7 +13,7 @@ defmodule Authable.Plug.Authenticate do
   end
 
   @doc """
-  Plug function to authenticate client for resouce owner and assigns resource
+  Plug function to authenticate client for resource owner and assigns resource
   owner into conn.assigns[:current_user] key.
   If it fails, then it halts connection and returns :bad_request, :unauthorized
   or :forbidden status codes with error json.
@@ -63,8 +63,8 @@ defmodule Authable.Plug.Authenticate do
     conn
     |> put_resp_header("www-authenticate", "Bearer realm=\"authable\"")
     |> renderer.render(:forbidden, %{
-         errors: %{details: "Resource access requires authentication!"}
-       })
+      errors: %{details: "Resource access requires authentication!"}
+    })
     |> halt()
   end
 
