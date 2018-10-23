@@ -5,7 +5,7 @@ defmodule Authable.RepoBase do
 
   defmacro __using__(_) do
     quote do
-      alias Authable.Model.{User, Token, Client, App}
+      alias Authable.Model.{App, Client, Token, User}
 
       @resource_owner User
       @token_store Token

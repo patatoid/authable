@@ -6,8 +6,8 @@ defmodule Authable.Model.Token do
   use Ecto.Schema
   import Ecto.Changeset
   import Authable.Config, only: [app_scopes: 0, expires_in: 0]
-  alias Authable.Utils.Crypt, as: CryptUtil
   alias Authable.Model.User
+  alias Authable.Utils.Crypt, as: CryptUtil
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -41,8 +41,8 @@ defmodule Authable.Model.Token do
     |> changeset(params)
     |> put_token_name("authorization_code")
     |> put_expires_at(
-         :os.system_time(:seconds) + expires_in()[:authorization_code]
-       )
+      :os.system_time(:seconds) + expires_in()[:authorization_code]
+    )
   end
 
   def refresh_token_changeset(model, params \\ :empty) do

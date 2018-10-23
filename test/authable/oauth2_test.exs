@@ -3,8 +3,8 @@ defmodule Authable.OAuth2Test do
   use Authable.Rollbackable
   use Authable.RepoBase
   import Authable.Factory
-  alias Authable.OAuth2
   alias Authable.Error.SuspiciousActivity, as: SuspiciousActivityError
+  alias Authable.OAuth2
 
   @redirect_uri "https://xyz.com/rd"
   @scopes "read"

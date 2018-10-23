@@ -4,9 +4,9 @@ defmodule Authable.Helper do
   owner.
   """
 
-  alias Authable.AuthStrategy.Session, as: SessionAuthStrategy
-  alias Authable.AuthStrategy.QueryParam, as: QueryParamAuthStrategy
   alias Authable.AuthStrategy.Header, as: HeaderAuthStrategy
+  alias Authable.AuthStrategy.QueryParam, as: QueryParamAuthStrategy
+  alias Authable.AuthStrategy.Session, as: SessionAuthStrategy
 
   @doc """
   Authenticate user by using configured authorization methods and scopes.
