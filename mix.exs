@@ -45,11 +45,11 @@ defmodule Authable.Mixfile do
       {:secure_random, ">= 0.5.1"},
       {:plug, ">= 1.0.0"},
       {:poison, ">= 2.0.0"},
-      {:ex_machina, ">= 2.0.0", only: :test},
-      {:credo, ">= 0.8.4", only: [:dev, :test]},
-      {:ex_doc, ">= 0.16.2", only: :dev},
+      {:ex_machina, ">= 2.2.0", only: :test},
+      {:credo, ">= 0.10.2", only: [:dev, :test]},
+      {:ex_doc, ">= 0.19.1", only: :dev},
       {:dialyxir, ">= 0.5.1", only: [:dev], runtime: false},
-      {:excoveralls, ">= 0.7.2", only: :test}
+      {:excoveralls, ">= 0.10.1", only: :test}
     ]
   end
 
