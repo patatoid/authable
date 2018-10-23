@@ -1,6 +1,6 @@
 defmodule Authable.Plug.UnauthorizedOnly do
   @moduledoc """
-  Authable plug implementation to refute authencated users to access resources.
+  Authable plug implementation to refute authenticated users to access resources.
   """
 
   import Plug.Conn
@@ -10,7 +10,7 @@ defmodule Authable.Plug.UnauthorizedOnly do
   def init([]), do: false
 
   @doc """
-  Plug function to refute authencated users to access resources.
+  Plug function to refute authenticated users to access resources.
 
   ## Examples
 
@@ -19,7 +19,7 @@ defmodule Authable.Plug.UnauthorizedOnly do
         plug Authable.Plug.UnauthorizedOnly when action in [:register]
 
         def register(conn, _params) do
-          # only not logged in user can access this action
+          # only logged out users can access this action
         end
       end
   """
@@ -35,8 +35,8 @@ defmodule Authable.Plug.UnauthorizedOnly do
 
     conn
     |> renderer.render(:bad_request, %{
-         errors: %{details: "Only unauthorized access allowed!"}
-       })
+      errors: %{details: "Only unauthorized access allowed!"}
+    })
     |> halt
   end
 end
