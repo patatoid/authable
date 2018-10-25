@@ -21,7 +21,8 @@ defmodule Authable.Plug.UnauthorizedOnlyTest do
   end
 
   defp sign_conn(conn) do
-    put_in(conn.secret_key_base, @secret)
+    conn.secret_key_base
+    |> put_in(@secret)
     |> Plug.Session.call(@signing_opts)
     |> fetch_session
   end

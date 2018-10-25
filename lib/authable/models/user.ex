@@ -6,7 +6,7 @@ defmodule Authable.Model.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias Authable.Utils.Crypt, as: CryptUtil
-  alias Authable.Model.{Token, Client, App}
+  alias Authable.Model.{App, Client, Token}
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
@@ -34,9 +34,9 @@ defmodule Authable.Model.User do
     |> validate_required([:email, :password])
     |> validate_length(:email, min: 6, max: 255)
     |> validate_format(
-         :email,
-         ~r/\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-       )
+      :email,
+      ~r/\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+    )
   end
 
   def settings_changeset(model, params \\ :empty) do

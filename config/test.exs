@@ -9,3 +9,5 @@ config :authable, Authable.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :authable, app_authorization: Authable.Stub.AppAuthorization
+
+config :logger, level: :warn

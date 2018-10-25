@@ -166,7 +166,7 @@ defmodule Authable.Authorization.AppTest do
       |> where(user_id: ^resource_owner.id)
       |> repo().all
 
-    assert Enum.count(tokens) == 0
+    assert Enum.empty?(tokens)
     assert is_nil(repo().get(@app, app.id))
   end
 end
