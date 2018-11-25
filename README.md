@@ -1,7 +1,6 @@
-# 🚪 Authable
+# Authable
 
 [![Build Status](https://travis-ci.org/mustafaturan/authable.svg?branch=master)](https://travis-ci.org/mustafaturan/authable)
-[![Deps Status](https://beta.hexfaktor.org/badge/all/github/mustafaturan/authable.svg)](https://beta.hexfaktor.org/github/mustafaturan/authable)
 
 OAuth2 Provider implementation modules and helpers using `plug`, `ecto` and `postgres` for any `elixir` application.
 
