@@ -239,10 +239,6 @@ mix test
 
 Authable is an extensible module, you can create your strategy and share as hex package(Which can be listed on Wiki pages).
 
-## Todo
-
-- HMAC Auth will be added as a new external strategy
-
 ## References
 
 * https://tools.ietf.org/html/rfc6749
