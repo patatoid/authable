@@ -47,7 +47,7 @@ defmodule Authable.Mixfile do
   defp deps do
     [
       {:postgrex, "~> 0.13.5"},
-      {:ecto, "~> 2.2.10"},
+      {:ecto, "~> 3.1.3"},
       {:comeonin, ">= 3.0.0"},
       {:bcrypt_elixir, ">= 1.1.1"},
       {:secure_random, ">= 0.5.1"},
