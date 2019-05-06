@@ -46,8 +46,8 @@ defmodule Authable.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:postgrex, "~> 0.13.5"},
-      {:ecto, "~> 2.2.10"},
+      {:postgrex, "~> 0.14.2"},
+      {:ecto_sql, "~> 3.1.1"},
       {:comeonin, ">= 3.0.0"},
       {:bcrypt_elixir, ">= 1.1.1"},
       {:secure_random, ">= 0.5.1"},

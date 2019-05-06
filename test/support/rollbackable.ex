@@ -14,13 +14,16 @@ defmodule Authable.Rollbackable do
   setup do
     # Wrap this case in a transaction
     Ecto.Adapters.SQL.Sandbox.mode(repo(), :manual)
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(repo())
 
-    # Roll it back once we are done
+    Ecto.Adapters.SQL.Sandbox.checkout(repo())
+    |> rollback()
+  end
+
+  defp rollback(:ok) do
     on_exit(fn ->
       Ecto.Adapters.SQL.Sandbox.mode(repo(), {:shared, self()})
     end)
-
     :ok
   end
+  defp rollback({:already, :owner}), do: rollback(:ok)
 end
